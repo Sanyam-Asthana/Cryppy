@@ -1,13 +1,14 @@
 <html>
   <head>
     <title>Cryppy - Quick decoding tool</title>
-    <link rel="stylesheet" href="/static/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Sanyam-Asthana/Notex@main/notex.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
 
   <body>
     <h1><a href="/">Cryppy</a></h1>
     <form action="/decode" method="post">
-      <input type="text" id="enc_str" name="enc_str" required>
+      <input type="text" id="enc_str" name="enc_str" required placeholder="Encoded string">
       <button type="submit">Decode</button>
     </form>
 
@@ -33,7 +34,7 @@
       Cryppy is an open-source tool which recognises the type of encryption based on patterns and decodes them.
     </p>
     <p>
-      This is especially useful in a competitve/high-stakes environment such as CTFs.
+      This is especially useful in competitve/high-stakes environments such as CTFs.
     </p>
     <strong>Try out these examples!</strong>
     <ul>

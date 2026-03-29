@@ -3,13 +3,16 @@ import urllib.parse
 import codecs
 
 def decode_binary(enc_str: str) -> str:
-    components = enc_str.split()
-    result = ""
-    for component in components:
-        dec = int(component, 2)
-        result += chr(dec)
+    try:
+        components = enc_str.split()
+        result = ""
+        for component in components:
+            dec = int(component, 2)
+            result += chr(dec)
 
-    return result
+        return result
+    except:
+        return ""
 
 def decode_octal(enc_str: str) -> str:
     components = enc_str.split()
