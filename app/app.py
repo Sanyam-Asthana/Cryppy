@@ -30,8 +30,7 @@ def decode(request: Request, enc_str: str = Form(...)):
     predictions = detector.detect_encodings(enc_str)
     results = decoder.decode_encodings(enc_str, predictions)
 
-    results = {k: v for k, v in results.items() if v.isprintable() and v != ""}
-
+    results = {k: v for k, v in results.items() if v != "" and all(c.isprintable() or c in '\n\r\t' for c in v)}
     return templates.TemplateResponse(request, 
         "index.html",
         {
