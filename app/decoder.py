@@ -30,9 +30,12 @@ def decode_decimal(enc_str: str) -> str:
     return result
 
 def decode_hexadecimal(enc_str: str) -> str:
-    temp = enc_str.replace(" ", "").replace("0x", "")
-    result = bytes.fromhex(temp).decode('utf-8')
-    return result
+    try:
+        temp = enc_str.replace(" ", "").replace("0x", "")
+        result = bytes.fromhex(temp).decode('utf-8')
+        return result
+    except:
+        return ""
 
 def decode_base32(enc_str: str) -> str:
     try:
@@ -60,7 +63,15 @@ def decode_base85(enc_str: str) -> str:
         result = base64.b85decode(enc_str).decode('utf-8')
         return result
     except:
-        return ""
+        pass
+
+    try:
+        result = base64.a85decode(enc_str).decode('utf-8')
+        return result
+    except:
+        pass
+
+    return ""
 
 def decode_url_encoded(enc_str: str) -> str:
     result = urllib.parse.unquote(enc_str)
