@@ -1,0 +1,23 @@
+Description: Void IT Solutions has formally requested our assistance following a catastrophic breach of their internal R&D grid. The intrusion signatures are highly unusual this was not a random ransomware attack. Preliminary analysis suggests the perpetrator was deploying a custom personal bot script designed to hunt for specific data patterns and personal access points.
+
+The attacker treated this corporate workstation as if it were their own home server. But througly they made many mistakes. We request your participants to solve this and help our company.
+
+Our initial investigation told us that someone changed any of the users name and make their own name. But initially I forgot the name. Not only that they embed a “lifeline” backdoor within the system’s innocent-looking help and support configurations. Once established the adversary grew comfortable. And then they make mistake and make some history in others users account. Their footprint maybe their access point I think they forget to remove it maybe you can get something there and without alerting the corporate firewall they rewired the workstation’s internal networking. They tampered with local DNS mappings and stored hidden Wi-Fi profiles essentially tricking the machine into routing traffic to the attacker’s personal “home” environment. Deep digging we see that something is different with others file system and also noticed that attacker hide some contracts from us and some disposible note. But Admin2 working with user5 for something releated website development but admin2 made mistake his footprint with their password has been releaed in that users account. And that’s how attacker priviledge from user account to admin account.
+
+Now please help me to findout attacker and give me every information in this list above so that we can findout that attacker then we used law enforcement to recover our money.
+
+Note: This description and users password will work for all six challenges in the series.
+
+This is the ALL five users account password:
+
+User1:iknowyougoat
+
+User2:catdog2211
+
+User3:ksacademy3321
+
+User4:bdismyhometown404
+
+User5:dontgo1337
+
+User3’s password is the flag for this challenge…. make sure you read the description properly.

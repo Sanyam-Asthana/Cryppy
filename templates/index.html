@@ -6,42 +6,52 @@
   </head>
 
   <body>
-    <h1><a href="/">Cryppy</a></h1>
-    <form action="/decode" method="post">
-      <input type="text" id="enc_str" name="enc_str" required placeholder="Encoded string">
-      <button type="submit">Decode</button>
-    </form>
+    <header>
+      <h1><a href="/">Cryppy</a></h1>
+    </header>
 
-    {% if input %}
+    <main>
+      <section>
+        <form action="/decode" method="post">
+          <input type="text" id="enc_str" name="enc_str" required placeholder="Encoded string">
+          <button type="submit">Decode</button>
+        </form>
 
-    <h3>Results for '{{ input }}':</h3>
+        {% if input %}
 
-      {% if results %}
+        <h3>Results for '{{ input }}':</h3>
 
+          {% if results %}
+
+          <ul>
+            {% for name, decoding in results.items() %}
+            <li><strong>{{ name }}</strong>: <code>{{ decoding }}</code></li>
+            {% endfor %}
+          </ul>
+
+          {% else %}
+
+          <h4 style="color: red;">No valid results for {{ input }}!</h4>
+          {% endif %}
+        {% endif %}
+    </section>
+
+    <section>
+      <p>
+        Cryppy is an open-source tool which recognises the type of encryption based on patterns and decodes them.
+      </p>
+      <p>
+        This is especially useful in competitve/high-stakes environments such as CTFs.
+      </p>
+      <strong>Try out these examples!</strong>
       <ul>
-        {% for name, decoding in results.items() %}
-        <li><strong>{{ name }}</strong>: <code>{{ decoding }}</code></li>
-        {% endfor %}
+        <li><code>dGhpcyBpcyBhIGJhc2U2NCBzdHJpbmch</code></li>
+        <li><code>74 68 69 73 20 69 73 20 61 20 68 65 78 20 73 74 72 69 6e 67 21</code></li>
+        <li><code>@UX=h3&Mh"FE2)5B-@</code></li>
       </ul>
+    </section>
 
-      {% else %}
-
-      <h4 style="color: red;">No valid results for {{ input }}!</h4>
-      {% endif %}
-    {% endif %}
-
-    <p>
-      Cryppy is an open-source tool which recognises the type of encryption based on patterns and decodes them.
-    </p>
-    <p>
-      This is especially useful in competitve/high-stakes environments such as CTFs.
-    </p>
-    <strong>Try out these examples!</strong>
-    <ul>
-      <li><code>dGhpcyBpcyBhIGJhc2U2NCBzdHJpbmch</code></li>
-      <li><code>74 68 69 73 20 69 73 20 61 20 68 65 78 20 73 74 72 69 6e 67 21</code></li>
-      <li><code>@UX=h3&Mh"FE2)5B-@</code></li>
-    </ul>
+    </main>
 
     <footer>
       <p>MIT License — Copyright © 2026 Sanyam Asthana<br>

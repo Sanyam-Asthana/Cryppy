@@ -16,9 +16,13 @@ encoding_patterns = {
     "punycode" : r"^xn--[a-z0-9\-]+$" # starts with xn--, not implemented yet
 }
 
-def detect_encodings(enc_str : str) -> list[str]:
+cipher_patterns = {
+    "rot_13": r"[a-zA-Z]"
+}
+
+def detect_encodings(enc_str: str) -> list[str]:
     """
-    detects the encoding by brute forcing and matching against a dictionary of encoding a patterns
+    detects the encoding by brute forcing and matching against a dictionary of encoding patterns
     """
     predictions: list[str] = []
 
@@ -26,5 +30,17 @@ def detect_encodings(enc_str : str) -> list[str]:
         if(re.match(pattern, enc_str)):
             predictions.append(name)
 
+    return predictions
+
+def detect_cipher(enc_str: str) -> list[str]:
+    """
+    detects the cipher by matching against a dictionary of cipher patterns
+    """
+    predictions: list[str] = []
+
+    for name, pattern in cipher_patterns.items():
+        if(re.match(pattern, enc_str)):
+            predictions.append(name)
+    
     return predictions
 
