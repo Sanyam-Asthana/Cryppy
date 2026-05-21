@@ -28,8 +28,10 @@ def root(request: Request):
 
 @app.post("/decode")
 def decode(request: Request, enc_str: str = Form(...)):
-    predictions = detector.detect_encodings(enc_str)
-    results = decoder.decode_encodings(enc_str, predictions)
+    encoding_predictions = detector.detect_encodings(enc_str)
+    encoding_results = decoder.decode_encodings(enc_str, encoding_predictions)
+
+    
 
     results = {
         k: v
